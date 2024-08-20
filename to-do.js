@@ -8,7 +8,7 @@ function deleteTask(button) {
         const taskInput = document.getElementById('taskInput');
         const taskTableBody = document.getElementById('taskTableBody');
     
-        // Function to add a new task
+    
         function addTask() {
             const taskText = taskInput.value.trim();
     
@@ -44,7 +44,7 @@ function deleteTask(button) {
             taskInput.value = '';
         }
     
-        // Attach the addTask function to the button's click event
+
         addTaskButton.addEventListener('click', addTask);
     });
     
