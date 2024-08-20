@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html>
+<style link rel="stylesheet" href="bootstrap.css">
+    header{
+        text-align: center;
+        font-weight: bold;
+        color: green;
+
+    }
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  width: 60%;
+  margin: 50px auto;
+  background-color: white;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  padding: 30px;
+  border-radius: 8px;
+}
+
+h1 {
+  text-align: center;
+  color: #333;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+th, td {
+  padding: 10px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+  
+}
+
+th {
+  background-color: #f2f2f2;
+}
+
+.team-member {
+  display: flex;
+  align-items: center;
+ 
+}
+
+.avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+.actions {
+  display: flex;
+  align-items: center;
+}
+
+
+
+.action-icon:hover {
+  opacity: 0.8;
+}
+
+
+.button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  font-weight: bold;
+  cursor: pointer;
+  margin-bottom: 20px;
+}
+
+.cancel-button {
+  background-color: #ccc;
+  color: black;
+ 
+}
+
+.add-button {
+  background-color: #6058eb;
+  color: white;
+}
+
+.float-end{
+ margin-right: 15px;
+ margin-top: 20px;
+}
+.container{
+  height:500px;
+}
+.delete-btn{
+  margin-top: 20px;
+  background-color:transparent;
+  border: none;
+}
+.delete-btn{
+  margin-bottom: 20px;
+  margin-left: 20px;
+  color: white;
+  background-color: rgb(235, 82, 82);
+
+}
+</style>
+</head>
+<script>
+  function deleteTask(button) {
+  
+    var row = button.closest('tr');
+    
+    row.remove();
+  }
+</script>
+<div class="container">
+  <header>MY TO-DO LIST</header>
+
+<table class="table">
+    <thead>
+      <tr>
+        <th>Task</th>
+        
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+          <td>selling</td>
+          
+          <td class="actions">
+            <span>completed</span>
+            <button class="delete-btn" onclick="deleteTask(this)">Delete</button>
+          </td>
+      </tr>
+      <tr>
+        
+          <td>Office rent</td>
+          
+        
+            <td class="actions">
+              <span>completed</span>
+              <button class="delete-btn" onclick="deleteTask(this)">Delete</button>
+            </td>
+            
+      </tr>
+      <tr>
+        
+        <td>Office rent</td>
+        
+        
+          <td class="actions">
+            <span>completed</span>
+            <button class="delete-btn" onclick="deleteTask(this)">Delete</button>
+        
+        </td>
+      </tr>
+      <tr>
+        
+        <td>Office grocery shopping</td>
+       
+        
+          <td class="actions">
+            <span>completed</span>
+            <button class="delete-btn" onclick="deleteTask(this)">Delete</button>
+
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  
+  <button class="button add-button float-end" >ADD TASK</button>
+</div>
+</body>
+</html>
