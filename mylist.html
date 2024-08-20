@@ -1,176 +1,123 @@
 <!DOCTYPE html>
-<html>
-<style link rel="stylesheet" href="bootstrap.css">
-    header{
-        text-align: center;
-        font-weight: bold;
-        color: green;
-
-    }
-body {
-  font-family: Arial, sans-serif;
-  background-color: #f4f4f4;
-  margin: 0;
-  padding: 0;
-}
-
-.container {
-  width: 60%;
-  margin: 50px auto;
-  background-color: white;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  padding: 30px;
-  border-radius: 8px;
-}
-
-h1 {
-  text-align: center;
-  color: #333;
-}
-
-table {
-  width: 100%;
-  border-collapse: collapse;
-  margin-top: 20px;
-}
-
-th, td {
-  padding: 10px;
-  text-align: left;
-  border-bottom: 1px solid #ddd;
-  
-}
-
-th {
-  background-color: #f2f2f2;
-}
-
-.team-member {
-  display: flex;
-  align-items: center;
- 
-}
-
-.avatar {
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  margin-right: 10px;
-}
-
-.actions {
-  display: flex;
-  align-items: center;
-}
-
-
-
-.action-icon:hover {
-  opacity: 0.8;
-}
-
-
-.button {
-  padding: 10px 20px;
-  border: none;
-  border-radius: 5px;
-  font-weight: bold;
-  cursor: pointer;
-  margin-bottom: 20px;
-}
-
-.cancel-button {
-  background-color: #ccc;
-  color: black;
- 
-}
-
-.add-button {
-  background-color: #6058eb;
-  color: white;
-}
-
-.float-end{
- margin-right: 15px;
- margin-top: 20px;
-}
-.container{
-  height:500px;
-}
-.delete-btn{
-  margin-top: 20px;
-  background-color:transparent;
-  border: none;
-}
-.delete-btn{
-  margin-bottom: 20px;
-  margin-left: 20px;
-  color: white;
-  background-color: rgb(235, 82, 82);
-
-}
-</style>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To-Do List</title>
+    <link rel="stylesheet" href="C:\Users\Admin\Downloads\bootstrap-4.5.3-dist\bootstrap-4.5.3-dist\css">
+    <style>
+        header {
+            text-align: center;
+            font-weight: bold;
+            color: green;
+        }
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            width: 60%;
+            margin: 50px auto;
+            background-color: white;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            padding: 30px;
+            border-radius: 8px;
+            height: 500px;
+            position: relative;
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        th, td {
+            padding: 10px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        .actions {
+            display: flex;
+            align-items: center;
+        }
+        .delete-btn {
+            margin-left: 20px;
+            color: white;
+            background-color: rgb(235, 82, 82);
+            border: none;
+            padding: 5px 10px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .delete-btn:hover {
+            opacity: 0.8;
+        }
+        .button {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+        .cancel-button {
+            background-color: #ccc;
+            color: black;
+        }
+        .add-button {
+            background-color: #6058eb;
+            color: white;
+        }
+        .float-end {
+            position: absolute;
+            bottom: 30px;
+            right: 30px;
+        }
+        .input-container {
+            margin-bottom: 20px;
+        }
+        #taskInput {
+            width: 80%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        #taskInputContainer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+    </style>
 </head>
-<script src="to-do.js" >
- 
-</script>
-<div class="container">
-  <header>MY TO-DO LIST</header>
+<body>
+    <div class="container">
+        <header>MY TO-DO LIST</header>
 
-<table class="table">
-    <thead>
-      <tr>
-        <th>Task</th>
-        
-        <th>Actions</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-          <td>selling</td>
-          
-          <td class="actions">
-            <span>completed</span>
-            <button class="delete-btn" onclick="deleteTask(this)">Delete</button>
-          </td>
-      </tr>
-      <tr>
-        
-          <td>Office rent</td>
-          
-        
-            <td class="actions">
-              <span>completed</span>
-              <button class="delete-btn" onclick="deleteTask(this)">Delete</button>
-            </td>
-            
-      </tr>
-      <tr>
-        
-        <td>Office rent</td>
-        
-        
-          <td class="actions">
-            <span>completed</span>
-            <button class="delete-btn" onclick="deleteTask(this)">Delete</button>
-        
-        </td>
-      </tr>
-      <tr>
-        
-        <td>Office grocery shopping</td>
-       
-        
-          <td class="actions">
-            <span>completed</span>
-            <button class="delete-btn" onclick="deleteTask(this)">Delete</button>
+        <div id="taskInputContainer" class="input-container">
+            <input type="text" id="taskInput" placeholder="Enter a new task">
+            <button class="button add-button" onclick="addTask()">ADD TASK</button>
+        </div>
 
-        </td>
-      </tr>
-    </tbody>
-  </table>
-  
-  <button class="button add-button float-end" >ADD TASK</button>
-</div>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Task</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody id="taskTableBody">
+                <!-- Tasks will be added here -->
+            </tbody>
+        </table>
+    </div>
+
+    <script src="to-do.js"></script>
 </body>
 </html>
